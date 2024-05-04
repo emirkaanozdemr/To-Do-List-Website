@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title style="text-align:center;">Tasks</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jQuery-1.11.1.min.js"></script>
+       <style>
+        button{
+          margin: 10px;
+          
+        }
+        div{
+
+          display: flex;
+          flex-wrap: wrap;
+        }
+       </style>    
+       <script>
+
+ function show(){
+ $(document).ready(function(){
+                 $(".button1").show();
+                              })
+                            }
+        function hide(){
+           $(document).ready(function(){
+            $(".button1").hide();
+           })
+        }                    
+        function imadeit(){
+          $(document).ready(function(){
+            $(".button1").fadeOut(1000);
+          })
+        }
+       </script>
+      </head>
+    <body>
+      <h1 style="text-align:center;">Tasks</h1>
+        {% for task in tasks %}   
+        <li class = "button1" ondblclick="imadeit()" >{{ task }}</li>         
+        {% empty %}
+        <p>Congratulations! You studied hard!</p>
+        {% endfor %}
+  
+        </ul>
+        <a href="/tasks/add">Add a New Task</a>
+      </body>
+</html>
